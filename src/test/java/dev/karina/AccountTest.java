@@ -20,7 +20,7 @@ public class AccountTest {
         assertEquals(2000.0f, account.getBalance(), 0.001, "Balance should be decrease correctly");
         assertEquals(1, account.getWithdrawalCount(), "Withdrawal count should be incremented");
         account.withdraw(4000.0f);
-        assertEquals(2000, account.getWithdrawalCount(), "Withdrawal count should be incremented on overdraw");
-
+        assertEquals(2000.0f, account.getBalance(), 0.0001, "Balance should not change os overdraw");
+        assertEquals(1, account.getWithdrawalCount(), "Withdrawal count should be incremented on overdraw");
     }
 }
