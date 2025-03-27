@@ -53,6 +53,13 @@ public class Account {
 
     public void setMonthlyFee(float fee) {
         this.monthlyFee = fee;
+
     }
 
+    public String print() {
+        return "Balance: " + balance
+                + ", Deposits: " + depositCount
+                + ", Withdrawals: " + withdrawCount
+                + ", Monthly Fee: " + monthlyFee;
+    }
 }

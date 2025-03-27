@@ -51,7 +51,8 @@ public class AccountTest {
         account.withdraw(1000.0f);
         account.setMonthlyFee(50.0f);
 
-        String expectedOutput = "Balance: 6000.0, Deposit: 1 Withdrawal: 1,Monthly Fee: 50.0";
-        assertEquals(expectedOutput, account.print(), "Print method output is incorrect");
+        String expectedOutput = "Balance: 6000.0, Deposits: 1, Withdrawals: 1, Monthly Fee: 50.0";
+        assertEquals(expectedOutput, account.print(), "Print method output is incorrect.");
     }
+
 }
