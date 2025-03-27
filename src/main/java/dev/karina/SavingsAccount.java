@@ -29,4 +29,14 @@ public class SavingsAccount extends Account {
         this.active = balance >= 10000.0f;
         System.out.println("After withdraw:" + balance + ", Active statuts:" + active);
     }
+
+    @Override
+    public void monthlyStatement() {
+        if (withdrawCount > 4) {
+            monthlyFee += (withdrawCount - 4) * 1000.0f;
+        }
+        super.monthlyStatement();
+        this.active = balance >= 10000.0f;
+    }
+
 }
