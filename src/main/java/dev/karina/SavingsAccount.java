@@ -39,4 +39,10 @@ public class SavingsAccount extends Account {
         this.active = balance >= 10000.0f;
     }
 
+    @Override
+    public String print() {
+        return "Balance: " + balance + ", Monthly Fee: " + monthlyFee + ", Transactions: "
+                + (depositCount + withdrawCount);
+    }
+
 }

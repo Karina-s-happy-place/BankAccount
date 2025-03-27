@@ -40,7 +40,7 @@ public class SavingsAccountTest {
         SavingsAccount account = new SavingsAccount(11000, 5.0f);
         account.deposit(1000.0f);
         account.withdraw(500.0f);
-        String expectedOutput = "Balance: 11500.0, Monthly Fee: 0.0, Trasactions: 2";
+        String expectedOutput = "Balance: 11500.0, Monthly Fee: 0.0, Transactions: 2";
         assertEquals(expectedOutput, account.print(), "The print method should display the correct output");
     }
 }
