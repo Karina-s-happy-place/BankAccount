@@ -39,4 +39,9 @@ public class Account {
         return withdrawCount;
     }
 
+    public void calculateMonthlyInterest() {
+        float monthlyInterest = (balance * (annualInterestRate / 100)) / 12;
+        balance += monthlyInterest;
+    }
+
 }
