@@ -43,4 +43,15 @@ public class AccountTest {
         assertEquals(0, account.getWithdrawalCount(), "Withdrawal count should be reset");
 
     }
+
+    @Test
+    public void testPrint() {
+        Account account = new Account(5000.0f, 5.0f);
+        account.deposit(2000.0f);
+        account.withdraw(1000.0f);
+        account.setMonthlyFee(50.0f);
+
+        String expectedOutput = "Balance: 6000.0, Deposit: 1 Withdrawal: 1,Monthly Fee: 50.0";
+        assertEquals(expectedOutput, account.print(), "Print method output is incorrect");
+    }
 }
