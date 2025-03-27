@@ -23,4 +23,11 @@ public class AccountTest {
         assertEquals(2000.0f, account.getBalance(), 0.0001, "Balance should not change os overdraw");
         assertEquals(1, account.getWithdrawalCount(), "Withdrawal count should be incremented on overdraw");
     }
+
+    @Test
+    public void testCalculateMonthlyInterest() {
+        Account account = new Account(12000.0f, 12.0f);
+        account.calculateMonthlyInterest();
+        assertEquals(12120.0f, account.getBalance(), 0.001, "Balance should include calculated interest");
+    }
 }
