@@ -34,4 +34,13 @@ public class SavingsAccountTest {
         account.monthlyStatement();
         assertEquals(7029.17f, account.getBalance(), 0.01, "Balance should reflect penalities and interest");
     }
+
+    @Test
+    public void testPrint() {
+        SavingsAccount account = new SavingsAccount(11000, 5.0f);
+        account.deposit(1000.0f);
+        account.withdraw(500.0f);
+        String expectedOutput = "Balance: 11500.0, Monthly Fee: 0.0, Trasactions: 2";
+        assertEquals(expectedOutput, account.print(), "The print method should display the correct output");
+    }
 }
