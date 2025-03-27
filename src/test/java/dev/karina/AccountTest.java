@@ -30,4 +30,17 @@ public class AccountTest {
         account.calculateMonthlyInterest();
         assertEquals(12120.0f, account.getBalance(), 0.001, "Balance should include calculated interest");
     }
+
+    @Test
+    public void testMonthlyStatement() {
+        Account account = new Account(15000, 6.0f);
+        account.setMonthlyFee(200.0f);
+        account.deposit(1000.0f);
+        account.withdraw(500.0f);
+        account.monthlyStatement();
+        assertEquals(15376.5f, account.getBalance(), 0.001, "Balance should reflect fees and interest");
+        assertEquals(0, account.getDepositCount(), "Deposit count should be reset");
+        assertEquals(0, account.getWithdrawalCount(), "Withdrawal count should be reset");
+
+    }
 }
