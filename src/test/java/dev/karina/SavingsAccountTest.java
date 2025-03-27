@@ -22,6 +22,16 @@ public class SavingsAccountTest {
         SavingsAccount account = new SavingsAccount(12000.0f, 5.0f);
         account.withdraw(3000.0f);
         assertEquals(9000.0f, account.getBalance(), "the balance should reflect the withdrawal");
-        assertFalse(account.isActive(), "Account should be inactive with balance < 10,0000.");
+        assertFalse(account.isActive(), "Account should be inactive with balance < 10,000.");
+    }
+
+    @Test
+    public void testMonthlyStatement() {
+        SavingsAccount account = new SavingsAccount(15000.0f, 5.0f);
+        for (int i = 0; i < 6; i++) {
+            account.withdraw(1000.0f);
+        }
+        account.monthlyStatement();
+        assertEquals(7029.17f, account.getBalance(), 0.01, "Balance should reflect penalities and interest");
     }
 }
