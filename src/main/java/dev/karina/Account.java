@@ -44,4 +44,15 @@ public class Account {
         balance += monthlyInterest;
     }
 
+    public void monthlyStatement() {
+        balance -= monthlyFee;
+        calculateMonthlyInterest();
+        depositCount = 0;
+        withdrawCount = 0;
+    }
+
+    public void setMonthlyFee(float fee) {
+        this.monthlyFee = fee;
+    }
+
 }
