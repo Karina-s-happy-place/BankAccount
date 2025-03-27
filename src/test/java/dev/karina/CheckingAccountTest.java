@@ -12,4 +12,14 @@ public class CheckingAccountTest {
         assertEquals(0.0f, account.getBalance(), 0.001, "Balance should be 0 after overdraft");
         assertEquals(2000.0f, account.getOverdraft(), 0.001, "Overdraft should be 2000.");
     }
+
+    @Test
+    public void testDepositReducesOverdraft() {
+        CheckingAccount account = new CheckingAccount(5000.0f, 5.0f, 0);
+        account.withdraw(7000.0f);
+        account.deposit(1500.0f);
+        assertEquals(500.0f, account.getOverdraft(), 0.001, "Overdraft should be reduced by 500");
+        assertEquals(0.0f, account.getBalance(), 0.001, "The balance must be 0 until the overdraft is paid.");
+    }
+
 }
