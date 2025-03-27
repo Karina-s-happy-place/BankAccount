@@ -26,4 +26,17 @@ public class Account {
         return depositCount;
     }
 
+    public void withdraw(float ammount) {
+        if (ammount <= balance) {
+            balance -= ammount;
+            withdrawCount++;
+        } else {
+            System.out.println("Insufficient funds");
+        }
+    }
+
+    public int getWithdrawalCount() {
+        return withdrawCount;
+    }
+
 }
