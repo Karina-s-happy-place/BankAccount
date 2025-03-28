@@ -51,9 +51,8 @@ If you want to clone this project from a GitHub repository, use the following co
 
 ```sh
 git clone https://github.com/Karina-s-happy-place/BankAccount
-cd computer_shop
 ```
-#### Make sure you have Java JDK installed. You can verify it by running:
+#### Make sure you have Java JDK installed. You can verify it by running:
 Navigate to the project directory and run:
 ```sh
 java -version
