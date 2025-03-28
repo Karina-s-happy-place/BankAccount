@@ -22,4 +22,16 @@ public class CheckingAccountTest {
         assertEquals(0.0f, account.getBalance(), 0.001, "The balance must be 0 until the overdraft is paid.");
     }
 
+    @Test
+    public void testMonthlyStatement() {
+        CheckingAccount account = new CheckingAccount(5000.0f, 5.0f, 0);
+        account.withdraw(6000.0f);
+        account.deposit(500.0f);
+        account.setMonthlyFee(200.0f);
+        account.monthlyStatement();
+
+        assertEquals(0.0f, account.getBalance(), 0.01, "Balance should be 0.");
+        assertEquals(700.0f, account.getOverdraft(), 0.01, "Overdraft should be the monthly fee. ");
+    }
+
 }
