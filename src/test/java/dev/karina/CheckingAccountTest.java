@@ -39,7 +39,7 @@ public class CheckingAccountTest {
         CheckingAccount account = new CheckingAccount(5000.0f, 5.0f, 0);
         account.withdraw(7000.0f);
         account.deposit(1000.0f);
-        String expectedOutput = "Balance: 0.0, Monthly Fee: 0.0, Transactions: 2, Overdraft: 1000.0f";
+        String expectedOutput = "Balance: 0.0, Monthly Fee: 0.0, Transactions: 2, Overdraft: 1000.0";
         assertEquals(expectedOutput, account.print(), "The print method should return the correct information.");
     }
 

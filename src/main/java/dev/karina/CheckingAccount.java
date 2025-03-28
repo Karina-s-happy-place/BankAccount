@@ -47,4 +47,12 @@ public class CheckingAccount extends Account {
         super.calculateMonthlyInterest();
     }
 
+    @Override
+    public String print() {
+        return "Balance: " + balance
+                + ", Monthly Fee: " + monthlyFee
+                + ", Transactions: " + (depositCount + withdrawCount)
+                + ", Overdraft: " + overdraft;
+    }
+
 }
