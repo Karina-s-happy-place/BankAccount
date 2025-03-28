@@ -34,4 +34,13 @@ public class CheckingAccountTest {
         assertEquals(700.0f, account.getOverdraft(), 0.01, "Overdraft should be the monthly fee. ");
     }
 
+    @Test
+    public void testPrint() {
+        CheckingAccount account = new CheckingAccount(5000.0f, 5.0f, 0);
+        account.withdraw(7000.0f);
+        account.deposit(1000.0f);
+        String expectedOutput = "Balance: 0.0, Monthly Fee: 0.0, Transactions: 2, Overdraft: 1000.0f";
+        assertEquals(expectedOutput, account.print(), "The print method should return the correct information.");
+    }
+
 }
