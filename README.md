@@ -12,8 +12,8 @@ This banking system application implements a complete account management solutio
 ### Base Account Class
 - Manages core banking operations (deposits, withdrawals)
 - Tracks balance, transaction counts, and interest rates
-- Handles monthly statements and interest calculations
-### Savings Account
+- Handles monthly statements and interest calculations 
+### Savings Account
 - Specialized account with activity status
 - Becomes inactive if balance falls below $10,000
 - Additional fees for excessive withdrawals
