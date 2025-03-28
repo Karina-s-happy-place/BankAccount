@@ -62,4 +62,5 @@ public class Account {
                 + ", Withdrawals: " + withdrawCount
                 + ", Monthly Fee: " + monthlyFee;
     }
+
 }

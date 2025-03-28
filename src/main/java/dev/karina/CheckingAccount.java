@@ -37,4 +37,14 @@ public class CheckingAccount extends Account {
         super.deposit(amount);
     }
 
+    @Override
+    public void monthlyStatement() {
+        balance -= monthlyFee;
+        if (balance < 0) {
+            overdraft += Math.abs(balance);
+            balance = 0;
+        }
+        super.calculateMonthlyInterest();
+    }
+
 }
